@@ -108,6 +108,7 @@ class GobangBoard extends Component {
             currentRow: item.rowIndex,
             currentCol: item.colIndex
         }, ()=> {
+            // 异步调用
 
 
             // judge the result to find the winner
@@ -115,23 +116,13 @@ class GobangBoard extends Component {
                 alert( this.state.currentPlayer + " win!!");
             });
 
+            // change the current player
+            console.log("current player");
+            this.state.currentPlayer = this.state.currentPlayer == 'black' ? 'white' : "black";
+
+            console.log("state after click");
+            console.log(this.state);
         });
-
-
-
-        // change the current player
-        console.log("current player");
-        console.log(this.state.currentPlayer);
-        console.log(this.state.currentPlayer == "black");
-        if(this.state.currentPlayer == 'black') {
-            this.setState({currentPlayer : 'white'});
-        } else {
-            this.setState({currentPlayer : 'black'});
-        }
-
-        console.log("state after click");
-        console.log(this.state);
-
 
     }
 
