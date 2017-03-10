@@ -229,8 +229,6 @@ class GobangBoard extends Component {
     }
 
     checkItem(row, col, blocks) {
-        console.log(blocks[row][col].color);
-        console.log(this.state.currentPlayer);
         return row >= 0 && row <= this.state.maxRow && col >= 0 && col <= this.state.maxCol && blocks[row][col].color === this.state.currentPlayer;
     }
 
